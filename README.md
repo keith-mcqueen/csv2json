@@ -6,7 +6,7 @@ Will export fields from a CSV file to a JSON file.
 csv2json accepts the following arguments:
 
 | argument (short) | argument (long) | description |
-|==================|=================|=============|
+|------------------|-----------------|-------------|
 | -h               | --help         | Prints a message describing the arguments and their usage |
 | -i INPUT FILE    | --input INPUT FILE | **Required** The path to the input file (CSV format) |
 | -o OUTPUT FILE   | --output OUTPUT FILE | **Required** The path to the output file (JSON format).  This file will be overwritten if it exists. |
