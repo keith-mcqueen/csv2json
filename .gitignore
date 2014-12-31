@@ -1,4 +1,5 @@
 
 csv2json.iml
 *.csv
+*.json
 parsetab.py
