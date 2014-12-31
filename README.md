@@ -2,7 +2,8 @@ csv2json
 ========
 Will export fields from a CSV file to a JSON file.
 
-### Usage
+Usage
+=====
 csv2json accepts the following arguments:
 
 | argument (short) | argument (long) | description |
