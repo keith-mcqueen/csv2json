@@ -5,9 +5,9 @@ import os
 import csv
 import sys
 import json
+import chardet
 
 import pypred
-
 
 get_elements = lambda search_list, indices: [search_list[i] for i in indices]
 
@@ -24,6 +24,7 @@ class Csv2Json:
         self.available_fields = []
         self.export_fields = []
         self.export_obj = None
+        self.encoding = 'UTF-8'
 
         self.parse_args()
 
@@ -101,6 +102,10 @@ class Csv2Json:
     def load(self):
         print 'Reading data from {}...'.format(self.csv_file_path)
 
+        # get the character encoding
+        self.encoding = chardet.detect(open(self.csv_file_path, 'r').read())['encoding']
+        print self.encoding
+
         with open(self.csv_file_path) as f:
             # process the first row as the header
             self.process_header(f.readline().strip())
@@ -150,7 +155,7 @@ class Csv2Json:
 
     def export(self):
         with open(self.json_file_path, 'w') as output:
-            json.dump(self.export_obj, output)
+            json.dump(self.export_obj, output, encoding=self.encoding)
 
 
 if __name__ == '__main__':
